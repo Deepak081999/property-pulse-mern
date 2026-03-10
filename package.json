@@ -1,0 +1,23 @@
+{
+    "name": "property-pulse-mern",
+    "version": "1.0.0",
+    "description": "Property Pulse - MERN Stack Application",
+    "scripts": {
+        "dev": "concurrently \"npm run dev --prefix backend\" \"npm start --prefix frontend\"",
+        "install-all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+        "build": "npm run build --prefix frontend"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "keywords": [
+        "mern",
+        "react",
+        "express",
+        "mongodb",
+        "property",
+        "rental"
+    ],
+    "author": "Sreenivasulu Kalluru",
+    "license": "MIT"
+}
