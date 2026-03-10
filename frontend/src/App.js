@@ -15,24 +15,21 @@ import PrivateRoute from './components/PrivateRoute';
 
 function App() {
     return (
-        <Layout>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/properties" element={<PropertiesPage />} />
-                {/* put specific static routes before the dynamic :id to prevent the parameter from
-                    greedily matching words like "search-results" */}
-                <Route path="/properties/search-results" element={<SearchResultsPage />} />
-                <Route path="/properties/add" element={<PrivateRoute><AddPropertyPage /></PrivateRoute>} />
-                <Route path="/properties/edit/:id" element={<PrivateRoute><EditPropertyPage /></PrivateRoute>} />
-                <Route path="/properties/saved" element={<PrivateRoute><SavedPropertiesPage /></PrivateRoute>} />
-                {/* now the catch-all dynamic route goes last */}
-                <Route path="/properties/:id" element={<PropertyDetailsPage />} />
-                <Route path="/messages" element={<PrivateRoute><MessagesPage /></PrivateRoute>} />
-                <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-            </Routes>
-        </Layout>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="properties" element={<PropertiesPage />} />
+                <Route path="properties/search-results" element={<SearchResultsPage />} />
+                <Route path="properties/add" element={<PrivateRoute><AddPropertyPage /></PrivateRoute>} />
+                <Route path="properties/edit/:id" element={<PrivateRoute><EditPropertyPage /></PrivateRoute>} />
+                <Route path="properties/saved" element={<PrivateRoute><SavedPropertiesPage /></PrivateRoute>} />
+                <Route path="properties/:id" element={<PropertyDetailsPage />} />
+                <Route path="messages" element={<PrivateRoute><MessagesPage /></PrivateRoute>} />
+                <Route path="profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="register" element={<RegisterPage />} />
+            </Route>
+        </Routes>
     );
 }
 
